@@ -64,7 +64,7 @@ export default function Home() {
                 </div> */}
 
                 <div className={classes.grid}>
-                    <Link href={{pathname: "/home" }}
+                    <Link href={{pathname: "/clients" }}
                         className={styles.card}>
                         <Image
                             className={classes.menuIcon}
