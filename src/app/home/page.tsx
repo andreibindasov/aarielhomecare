@@ -144,7 +144,7 @@ export default function Home() {
                         <h2>
                         Reports <span>-&gt;</span>
                         </h2>
-                        <p>Retrive specified data</p>
+                        <p>Retrieve specified data</p>
                     </Link>
                     <Link href={{pathname: "/home" }}
                         className={styles.card}>

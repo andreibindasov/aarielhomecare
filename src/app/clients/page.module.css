@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: normal;
     width: 100%;
+    max-width: 1980px;
     margin-top: -1rem;
 
     background: radial-gradient(circle, rgba(63, 166, 251, 0.3) 0%, rgba(39, 49, 163, 0) 100%);
@@ -52,4 +53,10 @@
   margin-right: 1.5rem;
   font-size: .9rem;
   cursor: pointer;
+}
+
+.main{
+  justify-content:flex-start;
+  /* max-width: 1980px !important; */
+  
 }

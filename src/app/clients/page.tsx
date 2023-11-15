@@ -3,9 +3,11 @@ import Link from 'next/link'
 import styles from '../page.module.css'
 import classes from './page.module.css'
 
+import Dtable from '../components/display_tables/Dtable'
+
 export default function Home() {
     return (
-        <main className={styles.main}>
+        <main className={styles.main + ' ' + classes.main}>
             <div className={classes.navWrkPanel}>
                 <div className={classes.leftLogo}>
                     <Link href={{pathname: "/home" }}>
@@ -39,7 +41,7 @@ export default function Home() {
                     <p>Admin</p>
                 </div>
             </div>
-            
+            <Dtable />
 
         </main>
         

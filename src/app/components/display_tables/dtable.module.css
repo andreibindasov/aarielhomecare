@@ -1,0 +1,63 @@
+.container{
+    width: 100%;
+    max-width: 1980px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.container h3{
+    width: 100%;
+    text-align: left;
+    color: rgba(58, 63, 122, 0.74);
+    margin-left: 3rem;
+    font-size: 2.4rem;
+}
+
+.dtable{
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgba(241, 243, 240, 0.3) 0%, rgba(39, 49, 163, 0.1) 100%);
+    width: 100%;
+    margin-top: 1.5rem;
+
+    font-size: 1rem;
+}
+
+.dtableRow{
+    display: grid;
+    /* padding: 1rem 3rem; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+    /* text-align: left; */
+
+    /* border-bottom: 1px solid gray;
+    border-left: 1px solid gray; */
+    
+}
+
+.dtableRow div{
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    height: 100%;
+    text-align: left;
+    padding: 1rem;
+
+}
+
+.dtableRow div:nth-child(1){
+    border-left: 1px solid gray;
+}
+
+.dtableRow:nth-child(odd){
+    background: radial-gradient(circle, rgba(116, 116, 124, 0.3) 0%,rgba(155, 146, 218, 0.1) 100%);
+}
+
+.dtableRowHeader{
+    color: whitesmoke;
+    font-size: 1.2rem;
+    background: radial-gradient(circle, rgba(90, 39, 39, 0.9) 0%,rgba(15, 1, 1, 0.3) 0%) !important;
+    border-top: 1px solid gray;
+}
+
