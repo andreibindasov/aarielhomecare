@@ -63,37 +63,8 @@ export default function Home() {
                     </Link>                    
                 </div> */}
 
-                <div className={classes.grid}>
-                    <Link href={{pathname: "/clients" }}
-                        className={styles.card}>
-                        <Image
-                            className={classes.menuIcon}
-                            src="/icons/clients-48.png"
-                            alt="A Ariel"
-                            width={33}
-                            height={33}
-                            priority
-                        />
-                        <h2>
-                        Clients <span>-&gt;</span>
-                        </h2>
-                        <p>Manage clients database</p>
-                    </Link>
-                    <Link href={{pathname: "/home" }}
-                        className={styles.card}>
-                        <Image
-                            className={classes.menuIcon}
-                            src="/icons/pcp-80.png"
-                            alt="A Ariel"
-                            width={33}
-                            height={33}
-                            priority
-                        />
-                        <h2>
-                        Providers <span>-&gt;</span>
-                        </h2>
-                        <p>Manage personal care providers database</p>
-                    </Link>
+                <div className={classes.grid_2}>
+                    
                     <Link href={{pathname: "/home" }}
                         className={styles.card}>
                         <Image
@@ -124,6 +95,42 @@ export default function Home() {
                         </h2>
                         <p>Manage In-Home Support Services Program</p>
                     </Link>
+                    
+                </div>
+
+
+                <div className={classes.grid_4}>
+                    <Link href={{pathname: "/clients" }}
+                        className={styles.card}>
+                        <Image
+                            className={classes.menuIcon}
+                            src="/icons/clients-48.png"
+                            alt="A Ariel"
+                            width={33}
+                            height={33}
+                            priority
+                        />
+                        <h2>
+                        Clients <span>-&gt;</span>
+                        </h2>
+                        <p>Manage clients database</p>
+                    </Link>
+                    <Link href={{pathname: "/home" }}
+                        className={styles.card}>
+                        <Image
+                            className={classes.menuIcon}
+                            src="/icons/pcp-80.png"
+                            alt="A Ariel"
+                            width={33}
+                            height={33}
+                            priority
+                        />
+                        <h2>
+                        Providers <span>-&gt;</span>
+                        </h2>
+                        <p>Manage personal care providers database</p>
+                    </Link>
+                    
                     <Link href={{pathname: "/home" }}
                         className={styles.card}>
                         <Image

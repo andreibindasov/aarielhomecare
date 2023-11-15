@@ -27,8 +27,16 @@ export default function Home() {
                         />
                     </Link>    
                 </div>
-                <div>
-                    Username: Hursheda
+                <div className={classes.rightLogo}>
+                    <Image
+                        // className={styles.logo}
+                        src="/icons/user-24.png"
+                        alt="User"
+                        width={33}
+                        height={33}
+                        priority
+                    />
+                    <p>Admin</p>
                 </div>
             </div>
             
