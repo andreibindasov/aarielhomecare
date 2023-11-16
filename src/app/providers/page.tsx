@@ -5,10 +5,10 @@ import classes from './page.module.css'
 
 import Dtable from '../components/display_tables/Dtable'
 
-import {CLIENTS} from '../api/db'
+import {PROVIDERS} from '../api/db'
 
 
-export default function Clients() {
+export default function Providers() {
     return (
         <main className={classes.main + ' ' + styles.main}>
             <div className={classes.navWrkPanel}>
@@ -44,7 +44,7 @@ export default function Clients() {
                     <p>Admin</p>
                 </div>
             </div>
-            <Dtable clients={CLIENTS} providers = {[]} route={'clients'} imgSource={'/icons/clients-96.png'} />
+            <Dtable clients={[]} providers = {PROVIDERS} route={'providers'} imgSource={'/icons/pcp-80.png'} />
 
         </main>
         

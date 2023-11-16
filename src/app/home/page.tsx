@@ -115,7 +115,7 @@ export default function Home() {
                         </h2>
                         <p>Manage clients database</p>
                     </Link>
-                    <Link href={{pathname: "/home" }}
+                    <Link href={{pathname: "/providers" }}
                         className={styles.card}>
                         <Image
                             className={classes.menuIcon}
