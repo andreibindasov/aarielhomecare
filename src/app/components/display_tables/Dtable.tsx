@@ -1,3 +1,7 @@
+"use client"
+
+import { useState, useEffect } from 'react'
+
 import Image from 'next/image'
 import classes from './dtable.module.css'
 
@@ -16,7 +20,12 @@ export default function Dtable(props: ComponentProps) {
     
     const { clients  = [{}], providers = [{}], route, imgSource } = props
 
-    const arr: any[] = route === 'clients' ? clients : providers
+    // const arr: any[] = route === 'clients' ? clients : providers
+    const [ arr, setArr ] = useState<{}[]>(route === 'clients' ? clients : providers)
+
+    useEffect(() => {
+        
+    }, [])
 
     function toTitleCase(str: string): string   {
         return str.toLowerCase().split(' ').map(function (word) {
@@ -24,6 +33,47 @@ export default function Dtable(props: ComponentProps) {
         }).join(' ');
     }
     
+    const handleDelete = (item: number) => {
+        
+        let idx: number = arr.findIndex((i: any)  => i.id === item)
+        let slicedArr: {}[] = arr.filter((a: any, index: number) => index !== idx)
+        setArr(slicedArr)
+
+    }
+
+    const handleAdd = () => {
+        let newId: number = Math.floor(Math.random() * 999)
+        let newItem: {id: number, 
+            fName: string, 
+            lName: string, 
+            dob: Date, 
+            phone: string, 
+            address: {
+                houseNum: number,
+                street: string,
+                apt: string,
+                city: string,
+                zip: number}
+            } = {
+            id: newId,
+            fName: '',
+            lName: '',
+            dob: new Date(),
+            phone: '',
+            address: {
+                houseNum: NaN,
+                street: '',
+                apt: '',
+                city: '',
+                zip: NaN
+            }
+
+        } 
+        
+        setArr(state => [newItem, ...state])
+
+    }
+
     return(
         <div className={classes.container}>
             <h3>
@@ -52,6 +102,8 @@ export default function Dtable(props: ComponentProps) {
                             width={45}
                             height={45}
                             priority
+
+                            onClick={() => handleAdd()}
                         />
                     </div>
                 </div>
@@ -61,7 +113,13 @@ export default function Dtable(props: ComponentProps) {
                         <div>{toTitleCase(i.lName)}</div>
                         <div>{i.dob.toLocaleString("en-US", {month:"2-digit"})}/{i.dob.toLocaleString("en-US", {day:"2-digit"})}/{i.dob.getFullYear()}</div>
                         <div>{i.phone}</div>
-                        <div>{i.address.houseNum + ' ' + toTitleCase(i.address.street) + (i.address.apt !== '' ? ', ' + i.address.apt + ', ' : ', ')  + toTitleCase(i.address.city) + ', ' + i.address.zip}</div>
+                        <div>{
+                                Number.isNaN(i.address.houseNum) ?
+                                ''
+                                :
+                                (i.address.houseNum + ' ' + toTitleCase(i.address.street) + (i.address.apt !== '' ? ', ' + i.address.apt + ', ' : ', ')  + toTitleCase(i.address.city) + ', ' + i.address.zip)
+                            }
+                        </div>
                         <div className={classes.lastDiv}>
                             <Image
                                 className={classes.addIcon_}
@@ -78,6 +136,7 @@ export default function Dtable(props: ComponentProps) {
                             width={33}
                             height={33}
                             priority
+                            onClick = {() => handleDelete(i.id)}
                         />
                         </div>
                     </div>
