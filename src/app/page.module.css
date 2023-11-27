@@ -120,7 +120,7 @@
   position: relative;
 }
 .logo:nth-child(1){
-  position: fixed;
+  position: absolute;
   animation: a-ariel 13s infinite;
 }
 .logo:nth-child(2){
